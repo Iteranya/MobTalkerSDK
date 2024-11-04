@@ -248,7 +248,7 @@ def story():
     vn.finish()
 
 
-    return vn.dialogueDict
+    return vn.getCompiledScript()
 
 
 def main():compile(storyname=storyName,script=story()) # Yeah, just run this file :v

@@ -5,12 +5,12 @@
 # Feel free to customize it to your system~
 from core.model import Character
 
-class VisualNovelModule(): # Module Class, just add more function as you like
-    def __init__(self):
-        self.dialogueDict = []
+scriptDict = []
 
+class VisualNovelModule(): # Module Class, just add more function as you like
+    
     def initialize(self,scriptName):
-        self.dialogueDict.append({
+        scriptDict.append({
             "type":"meta",
             "action":"initialize",
             "scriptName": scriptName
@@ -21,7 +21,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "type":"meta",
             "action":"start"
         }
-        self.dialogueDict.append(result)
+        scriptDict.append(result)
         return result
 
     def say(self,character,content,transition = False):
@@ -40,7 +40,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "content":content
         }
         if(transition==False):
-            self.dialogueDict.append(result)
+            scriptDict.append(result)
         return result
     
     def background(self,background):
@@ -48,14 +48,14 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "type":"modify_background",
             "background":"asset/"+background
         }
-        self.dialogueDict.append(result)
+        scriptDict.append(result)
         return result
     
     def clear_background(self):
         result = {
             "type":"clear_background"
         }
-        self.dialogueDict.append(result)
+        scriptDict.append(result)
         return result
 
     def show(self,character,sprite,transition=False):
@@ -76,7 +76,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
                 "row":1
             }
             if(transition==False):
-                self.dialogueDict.append(result)
+                scriptDict.append(result)
             return result
         else:
             pass
@@ -99,7 +99,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
                 "row":rowPos
             }
             if(nested==False):
-                self.dialogueDict.append(result)
+                scriptDict.append(result)
             return result
         elif isinstance(character,str):
             location = character+"/"+sprite+".png"
@@ -118,7 +118,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
                 "row":rowPos
             }
             if(nested==False):
-                self.dialogueDict.append(result)
+                scriptDict.append(result)
             return result
         else:
             pass
@@ -141,7 +141,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
                 "row":1
             }
             if(transition==False):
-                self.dialogueDict.append(result)
+                scriptDict.append(result)
             return result
         else:
             pass
@@ -164,7 +164,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
                 "row":1
             }
             if(transition==False):
-                self.dialogueDict.append(result)
+                scriptDict.append(result)
             return result
         else:
             pass
@@ -178,7 +178,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
                 "sprite":character.id
             }
             if(transition==False):
-                self.dialogueDict.append(result)
+                scriptDict.append(result)
             return result
         elif isinstance(character,str):
             print("Compiling: "+sprite)
@@ -188,7 +188,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
                 "sprite":sprite,
             }
             if(transition==False):
-                self.dialogueDict.append(result)
+                scriptDict.append(result)
             return result
         else:
             pass
@@ -202,7 +202,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "choice":[{"label": key, "display": value} for key, value in choice.items()]
         }
         if(nested==False):
-            self.dialogueDict.append(result)
+            scriptDict.append(result)
         return result
         
 
@@ -213,7 +213,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "action" : "label",
             "label":labelName
         }
-        self.dialogueDict.append(result)
+        scriptDict.append(result)
         return result
 
     def jumpTo(self,labelName:str,transition=False):
@@ -224,7 +224,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "label": labelName
         }
         if(transition==False):
-            self.dialogueDict.append(result)
+            scriptDict.append(result)
         return result
 
     def finish(self):
@@ -233,7 +233,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "type":"finish_dialogue",
             "action": "finish_dialogue"
         }
-        self.dialogueDict.append(result)
+        scriptDict.append(result)
         return result
         
 
@@ -245,7 +245,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "var": varName,
             "init":init
         }
-        self.dialogueDict.append(result)
+        scriptDict.append(result)
         return result
 
     # You can use (-) instead of subVar
@@ -257,7 +257,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "var": varName, 
             "value": addAmount
             }
-        self.dialogueDict.append (result)
+        scriptDict.append (result)
         return result
 
     def subVar(self,varName:str, subAmount:int):
@@ -268,7 +268,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "var": varName, 
             "value": subAmount
         }
-        self.dialogueDict.append(result)
+        scriptDict.append(result)
         return result
 
     def modVar(self,varName:str, value:any):
@@ -279,7 +279,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "var": varName, 
             "value": value
         }
-        self.dialogueDict.append(result)
+        scriptDict.append(result)
 
     def condSame(self,varName: str, equalValue, actions):
         print("Compiling: "+varName)
@@ -291,7 +291,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "value": equalValue,
             "actions":actions
         }
-        self.dialogueDict.append(result)
+        scriptDict.append(result)
         return result
 
     def condNotSame(self,varName: str, equalValue, actions: list):
@@ -304,7 +304,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "value": equalValue,
             "actions": actions
         }
-        self.dialogueDict.append(result)
+        scriptDict.append(result)
         return result
 
     def condLessThan(self,varName:str, lessThanValue, actions: list):
@@ -317,7 +317,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "value": lessThanValue,
             "actions": actions
         }
-        self.dialogueDict.append(result)
+        scriptDict.append(result)
         return result
 
     def condMoreThan(self,varName:str, moreThanValue, actions: list):  
@@ -330,7 +330,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "value": moreThanValue,
             "actions": actions
         }
-        self.dialogueDict.append(result)
+        scriptDict.append(result)
         return result
     
     def getGamemode(self,transition = True):
@@ -339,7 +339,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "action":"get_gamemode"
         }
         if(transition==False):
-            self.dialogueDict.append(result)
+            scriptDict.append(result)
         
         return result
 
@@ -349,7 +349,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "action":"custom_commmand",
             "command":minecraftCommmand
         }
-        self.dialogueDict.append(result)
+        scriptDict.append(result)
         return result
     
     def givePlayer(self,itemId:str,amount:int):
@@ -359,5 +359,8 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "item_id":itemId,
             "amount":amount
         }
-        self.dialogueDict.append(result)
+        scriptDict.append(result)
         return result
+    
+    def getCompiledScript(self):
+        return scriptDict
