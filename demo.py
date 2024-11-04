@@ -1,9 +1,10 @@
-from core.modules import VisualNovelModule
+from core.modules import VisualNovelModule,MinecraftModule
 from core.compiler import compile
 # This is the Example Script, obviously~
 
 from characters import Cupa,Andr # Import characters you've defined in characters.py
 vn = VisualNovelModule()
+mc = MinecraftModule()
 c = Cupa 
 a = Andr
 p = "Player" 
@@ -246,8 +247,6 @@ def story():
     vn.show(a,"happy")
     vn.say(a,"Happy to Help, see you later Player!")
     vn.finish()
-
-
     return vn.getCompiledScript()
 
 

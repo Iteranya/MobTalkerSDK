@@ -333,6 +333,11 @@ class VisualNovelModule(): # Module Class, just add more function as you like
         scriptDict.append(result)
         return result
     
+    def getCompiledScript(self):
+        return scriptDict
+
+class MinecraftModule():
+
     def getGamemode(self,transition = True):
         result = {
             "type":"command",
@@ -361,6 +366,3 @@ class VisualNovelModule(): # Module Class, just add more function as you like
         }
         scriptDict.append(result)
         return result
-    
-    def getCompiledScript(self):
-        return scriptDict
