@@ -230,3 +230,90 @@ Even then, some event can be gatelocked behind Affection Point. And one of the b
 And if all the events have been exhausted, then, well, the "Idle" conversation will trigger from then on until Script maker updates the script.
 
 
+NO FUCK THIS IS HARDER THAN I THOUGHT!!!!
+
+FUCK
+
+Hhhhhhhaaaaaa...
+
+Okay, so, here's how I want Script Maker to define days...
+
+They  have a list of label, each correspending with a day.
+
+EASY 
+
+Now, then, when it's "that" day, the just yump
+
+Question is... 
+
+HOW THE FUCK DO I PROCESS THIS!?!??!
+
+God, I want to minimize everything in Minecraft so BAD but TIME DEPENDS ON MINECRAFT!!!!!!!
+
+...
+
+No. of player go to bed? No
+Minecraft ticks? No
+Fish??? No...
+
+Why am I thinking about fish?
+
+Look, trying to keep track on time and sync everything is a nightmare, okay?
+
+I can't just "Boom" make it happen. Compilers can't touch minecraft code
+
+Fuck... This is Pure Logic Problem, is there even a way to abstract this even more?!?!?!
+
+It's a list of labels, right????
+
+label1, label2, label3, label4
+
+Label 3 can only be unlocked if label 2 is viewed and time has passed and that I need to tell the mod to jump straight to  label 3 too...
+
+What is the most elegant... NO, not elegant, What's the most Cowardice, most Braindead Simple way to do this???
+
+...
+
+Something that don't involve Minecraft...
+
+Is it even possible???
+
+An FSM is pure data, it can't know the time
+
+Only Minecraft knows the passing of time...
+
+...
+
+...
+
+...
+
+...
+
+...
+
+(Hush, I'm still thinking...)
+
+
+((Come on, there's gotta be a way...))
+
+...
+
+...
+
+Okay... Hear me out...
+
+What if... instead of putting like... Variables into the VN and backflipping...
+We instead... Use another kind of parameter...
+
+...
+
+player sleeps... right???
+
+Like, that's how you traditionally advance day...
+
+So... Hear me out... And I'm marking it as a feature...
+
+You Go To Sleep With The Mob To Advance Day
+
+BOOM!!!
