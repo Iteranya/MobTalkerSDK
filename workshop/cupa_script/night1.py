@@ -65,9 +65,9 @@ def story():
         vn.say("Narrator","The sun has risen, ready to start your day?",True),
         vn.choice({
             "day2": "Yes",
-            "night_idles": "No"
+            "chat_idles": "No"
         },True)
     ])    
-    vn.jumpTo("night_idles")
+    vn.jumpTo("chat_idles")
     vn.finish()
     return vn.dialogueDict

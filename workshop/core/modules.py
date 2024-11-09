@@ -282,22 +282,63 @@ class VisualNovelModule(): # Module Class, just add more function as you like
         self.dialogueDict.append(result)
         return result
     
-    def differentDay(self,eventlist:list):
-        print("Compiling day management")
+    def next(self,label):
         result = {
-            "type":"day_management",
-            "action":"different_day",
-            "events":eventlist
+            "type":"next",
+            "action":"next",
+            "label":label
         }
         self.dialogueDict.append(result)
         return result
-
-    def sameDay(self,eventlist:list):
-        print("Compiling same day management")
+    
+    def night_choice(self,choice: dict,nested=False):
+        print(choice)
         result = {
-            "type":"day_management",
-            "action":"same_day",
-            "events":eventlist
+            "type":"night_choice",
+            "action":"choice",
+            "choice":[{"label": key, "display": value} for key, value in choice.items()]
+        }
+        if(nested==False):
+            self.dialogueDict.append(result)
+        return result
+    
+    def idle_chats(self):
+        result = {
+            "type":"idle_chat",
+            "action":"idle_chat"
+        }
+        self.dialogueDict.append(result)
+        return result
+    
+    def unlock_dialogue(self,events:list):
+        result = {
+            "type":"unlock_dialogues",
+            "action":"unlock_dialogues",
+            "events":events
+        }
+        self.dialogueDict.append(result)
+        return result
+    
+    def condNight(self,actions):
+        print("Compiling: Night Condition")
+        result = {
+            "type":"conditional",
+            "action":"conditional",
+            "var": "Nyaaa~",
+            "condition": "night",
+            "actions":actions
+        }
+        self.dialogueDict.append(result)
+        return result
+    
+    def condDay(self,actions):
+        print("Compiling: Day Condition")
+        result = {
+            "type":"conditional",
+            "action":"conditional",
+            "var": "Nyaaa~",
+            "condition": "day",
+            "actions":actions
         }
         self.dialogueDict.append(result)
         return result

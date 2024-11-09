@@ -179,10 +179,10 @@ def story():
     vn.condNight([
         vn.say("Narrator","The day have come to an end. Are you at home and ready to end the day?",True),
         vn.choice({
-            "day2": "Yes",
-            "day_idles": "No"
+            "night1": "Yes",
+            "chat_idles": "No"
         },True)
     ])    
-    vn.jumpTo("day_idles")
+    vn.jumpTo("chat_idles")
     vn.finish()
     return vn.dialogueDict

@@ -1,6 +1,6 @@
 from core.modules import VisualNovelModule
 from core.compiler import compile
-from workshop.cupa_script import day_idles
+from workshop.cupa_script import idles
 # -------------------------------------------------------
 # This is the Example Multiple File Script
 # -------------------------------------------------------
@@ -22,7 +22,7 @@ scripts = [
     # day3.story(),
     # day4.story(),
     # day5.story(),
-    # idles.story()
+    idles.story()
 
 ]
 
