@@ -13,7 +13,7 @@ def story():
     vn.label("day2") # This is a 'Label', it will be used by the jump and choice to know where to go
     vn.show(c, "normal")
     vn.say(c,"Ahh... Finally, it's morning time~")
-    vn.say(c,"happy")
+    vn.show(c,"happy")
     vn.say(c,"Good Morning Player!")
     vn.choice({
         "chiper":"You're an early bird then?",
@@ -31,12 +31,15 @@ def story():
     vn.label("drowsy")
     vn.show(c,"normal")
     vn.say(c,"Aww, come on player, you can do better than that!")
+    vn.show(c,"happy")
     vn.say(c,"Get a move on! Chop chop~ It's time to face the day")
+    vn.show(c,"normal")
     vn.say(c,"Or you can just... sleep in, it's whatever, I'll be waiting until you're ready")
     vn.next("about_player")
     vn.finish()
 
     vn.label("about_player")
+    vn.show(c,"normal")
     vn.say(c,"So... Player, what do you do, exactly?")
     vn.say(c,"Sorry if it sounds like a weird question... but like... Yknow...")
     vn.say(c,"I know... next to nothing about you, you see?")
@@ -89,6 +92,7 @@ def story():
     vn.show(c,"normal")
     vn.say(c,"Nope! Nothing came to mind!")
     vn.say(c,"Guess I'll leave it to you to figure it out~")
+    vn.unlock_dialogue([""])
     vn.next("day2idle")
     vn.finish()
 
