@@ -44,7 +44,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "label": name,
             "content": content
         }
-        if not transition:
+        if transition == False:
             self.dialogueDict.append(result)
         return result
     
