@@ -115,8 +115,7 @@ def story():
     vn.say(c,"Ahhh... What am I thinking, of course I want to go back.")
     vn.jumpTo("incoming_call")
     
-    vn.label("end")
-    vn.finish()
+
 
     vn.label("about_cats")
     vn.show(c,"normal")
@@ -183,15 +182,16 @@ def story():
     vn.say(a,"Good point, Cupa, yes, the player can just speedrun through the night. Due to this, script maker has to make both day and night scenes. Let me explain a bit more.")
     vn.show_custom(a,"normal",16,9,4,8,13,1)
     vn.show_custom("asset","event_handling",16,9,9,6,2,1)
-    vn.say(a,"There should be a graph on your left")
+    vn.say(a,"There should be a graph on your left, is... is the texture broken???")
     vn.say(a,"If the texture is broken, go to the resourcepack menu and load the generated resourcepack")
     vn.say(a,"Apologies, in advance... But the dev's having trouble loading generated resourcepack automatically")
     vn.show(c,"tired")
-    vn.say(c,"Why did you cover me up?")
+    vn.say(c,"Hey don't cover me up!")
     vn.show_custom(a,"tired",16,9,4,8,13,1)
-    vn.say(a,"/vn.remove(c)")
+    vn.say(a,"`from characters import Cupa`\n`c = Cupa`")
     vn.show(c,"scared")
-    vn.say(c,"Wait, did you just...")
+    vn.say(c,"Wait, what are you doing!?")
+    vn.say(a,"`vn.remove(c)`")
     vn.remove(c)
     vn.say(a,"Ahem, now where was I...")
     vn.show_custom(a,"normal",16,9,4,8,13,1)
@@ -210,4 +210,7 @@ def story():
     vn.say(a,"Thank you for helping the dev test out this mod!")
     vn.finish()
     
+    vn.label("end")
+    vn.finish()
+
     return vn.dialogueDict
