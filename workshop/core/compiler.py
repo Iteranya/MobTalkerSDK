@@ -8,7 +8,7 @@ def compileVN(script):
     # print(script_actions)
     flatten = flattenVN(script_actions)
     check(flatten)
-    return flattenVN(flatten)
+    return flatten
 
 def check(actions: list[dict]):
     existing_label = []
