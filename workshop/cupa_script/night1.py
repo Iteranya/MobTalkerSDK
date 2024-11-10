@@ -26,7 +26,7 @@ def story():
 
     vn.label("i_am_player")
     vn.say(c,"Great, I kinda already know that you are Player")
-    vn.say(c,"normal")
+    vn.show(c,"normal")
     vn.say(c,"You're certainly not a normal human. For one, you're gonna revive after death.")
     vn.say(n,"It is important for the person behind the screen to know that neither this mod nor the script will take account to all the madlads who decided to play this mod in Hardcore mode.")
     vn.say(c,"I'm just like you, you know? If I die, I will probably revive. But now...")
@@ -54,6 +54,7 @@ def story():
     vn.say(c,"Ba-basically, if anything happen to me... you can bring me back, just... I dunno, I'm sure  you know exactly how it works!!!")
     vn.show(c,"angry")
     vn.say(c,"Again! No funny thoughts! Hmmph!")
+    vn.unlock_dialogue(["realms"])
     vn.next("night1idles")
     vn.finish()
 

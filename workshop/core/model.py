@@ -4,11 +4,11 @@ from dataclasses import dataclass
 @dataclass
 class Character:
     id:str|None=None
-    name: str|None = None
+    name: str|None = "unknown"
     description: str|None = None
     thoughts:str|None = None
-    spriteFolder:list|None = None
-    outfit: list|None = None
+    spriteFolder:list|None = "default"
+    outfit: list|None = "male"
     outfit: str|None = "default"
     states: list|None = None
     maxhealth: int = 40

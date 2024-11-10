@@ -13,8 +13,8 @@ def story():
     vn.label("start") # This is a 'Label', it will be used by the jump and choice to know where to go
     vn.show(c, "sad")
     vn.say("???","Ho?")
-    vn.show(c, "angry")
     vn.label("face_off")
+    vn.show(c, "angry")
     vn.say("???", "*squints*")
     vn.choice({
         "squint":"Squint back",
@@ -92,6 +92,7 @@ def story():
         vn.say(c,"You creep...",True)
     ])
     vn.say(c,"What do you want?")
+    
     vn.label("first_ask")
     vn.choice({
         "gunpowder":"Can I have Gunpowder?",
@@ -137,9 +138,9 @@ def story():
     vn.say(c,"But to be more specific, I'm a creeper boss mob.")
     vn.say(c,"You've heard of Boss Mob before, right? I wouldn't be surprised if you've never seen one.")
     vn.say(c,"We don't usually stick around in this realm...")
-    vn.say(c,"normal")
+    vn.show(c,"normal")
     vn.say(c,"Anyway, I gotta go now, catch ya later, try not to follow me.")
-    vn.unlock_dialogue("cactus_theory","boss_mob","realms")
+    vn.unlock_dialogue(["cactus_theory","boss_mob"])
     vn.next("stuck")
     vn.finish()
 
@@ -170,6 +171,7 @@ def story():
     vn.say(c,"But I can't access my realm anymore, I don't know what happened.")
     vn.next("day1idle")
     vn.say(c,"So... yeah...  Just... I'll follow along for now, aight?")
+    vn.finish()
 
 
     vn.label("day1idle")

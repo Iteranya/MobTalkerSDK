@@ -24,22 +24,47 @@ class VisualNovelModule(): # Module Class, just add more function as you like
         self.dialogueDict.append(result)
         return result
 
-    def say(self,character,content,transition = False):
+    def say(self, character, content, transition=False):
         name = ""
         if isinstance(character, Character):
             name = character.name
-        elif(character  == None):
+        elif character == None:
             name = ""
         else:
             name = character
-        print("Compiling: "+content)
+        print("Compiling: " + content)
+        contains_uppercase = any(char.isupper() for char in content)
+
+        # Check if content has no whitespace and is uppercase
+        if not contains_uppercase and not any(char in content for char in [' ', '.', ',', '!', '?', '#','@','$','*']):
+            raise ValueError("Look suspiciously like a 'show' statement because it contains no whitespace or a capital letter. If this is a mistake, use 'say_special' instead of say")
         result = {
-            "type":"dialogue",
-            "action":"say",
-            "label":name,
-            "content":content
+            "type": "dialogue",
+            "action": "say",
+            "label": name,
+            "content": content
         }
-        if(transition==False):
+        if not transition:
+            self.dialogueDict.append(result)
+        return result
+    
+    def say_special(self, character, content, transition=False):
+        name = ""
+        if isinstance(character, Character):
+            name = character.name
+        elif character == None:
+            name = ""
+        else:
+            name = character
+        print("Compiling: " + content)
+
+        result = {
+            "type": "dialogue",
+            "action": "say",
+            "label": name,
+            "content": content
+        }
+        if not transition:
             self.dialogueDict.append(result)
         return result
     
@@ -58,24 +83,29 @@ class VisualNovelModule(): # Module Class, just add more function as you like
         self.dialogueDict.append(result)
         return result
 
-    def show(self,character,sprite,transition=False):
-        if isinstance(character, Character): 
-            location = "characters/"+character.id+"/"+character.outfit+"/"+sprite+".png"
-            print("Compiling: "+sprite)
+    def show(self, character, sprite, transition=False):
+        if isinstance(character, Character):
+            # Check if sprite contains any whitespace
+            if ' ' in sprite:
+                raise ValueError("Sprite name cannot contain whitespace.")
+            
+            location = "characters/" + character.id + "/" + character.outfit + "/" + sprite + ".png"
+            print("Compiling: " + sprite)
+
             result = {
-                "type":"show_sprite",
-                "action":"show",
-                "sprite":character.id,
-                "location":location,
-                "position":"CENTER",
+                "type": "show_sprite",
+                "action": "show",
+                "sprite": character.id,
+                "location": location,
+                "position": "CENTER",
                 "wRatio": 16,
                 "hRatio": 9,
-                "wFrameRatio":4,
-                "hFrameRatio":8,
-                "column":7,
-                "row":1
+                "wFrameRatio": 4,
+                "hFrameRatio": 8,
+                "column": 7,
+                "row": 1
             }
-            if(transition==False):
+            if not transition:
                 self.dialogueDict.append(result)
             return result
         else:
@@ -83,6 +113,8 @@ class VisualNovelModule(): # Module Class, just add more function as you like
 
     def show_custom(self,character,sprite,wRatio,hRatio,wFrameRatio,hFrameRatio,colPos,rowPos,nested=False):
         if isinstance(character, Character): 
+            if ' ' in sprite:
+                raise ValueError("Sprite name cannot contain whitespace.")
             location = "characters/"+character.id+"/"+character.outfit+"/"+sprite+".png"
             print("Compiling: "+sprite)
             result = {
