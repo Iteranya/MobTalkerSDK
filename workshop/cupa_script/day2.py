@@ -13,7 +13,7 @@ def story():
     vn.label("day2") # This is a 'Label', it will be used by the jump and choice to know where to go
     vn.show(c, "normal")
     vn.say(c,"Ahh... Finally, it's morning time~")
-    vn.show(c,"happy")
+    vn.say(c,"happy")
     vn.say(c,"Good Morning Player!")
     vn.choice({
         "chiper":"You're an early bird then?",

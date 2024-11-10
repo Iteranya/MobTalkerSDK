@@ -36,8 +36,8 @@ class VisualNovelModule(): # Module Class, just add more function as you like
         contains_uppercase = any(char.isupper() for char in content)
 
         # Check if content has no whitespace and is uppercase
-        if not contains_uppercase and not any(char in content for char in [' ', '.', ',', '!', '?', '#','@','$','*']):
-            raise ValueError("Look suspiciously like a 'show' statement because it contains no whitespace or a capital letter. If this is a mistake, use 'say_special' instead of say")
+        if not contains_uppercase and not any(char in content for char in [' ', '.', ',', '!', '?', '#','@','$','*','`',':']):
+            raise ValueError("Look suspiciously like a 'show' statement because it contains no whitespace or a capital letter. If this is a mistake, use 'say_special' instead of say to bypass this check. But seriously, do double check it, okay??? You probably want to do a `show(c,\""+content+"\")` rather than `say(c,"+content+")`. This check will make your life easier, I swear, it's better if you caught on to this error in the SDK than in Minecraft. At least you don't have to wait to boot up minecraft to check all these errors. Ya hear??? But if  you really don't like it, then you can disable this check permanently by going to modules.py and disable the raise value  stuff in the say method. Don't say I didn't warn you.")
         result = {
             "type": "dialogue",
             "action": "say",
@@ -86,8 +86,8 @@ class VisualNovelModule(): # Module Class, just add more function as you like
     def show(self, character, sprite, transition=False):
         if isinstance(character, Character):
             # Check if sprite contains any whitespace
-            if ' ' in sprite:
-                raise ValueError("Sprite name cannot contain whitespace.")
+            if any(char in sprite for char in [' ', '.', ',', '!', '?', '#','@','$','*']):
+                raise ValueError("Sprite name cannot contain special characters or white space.")
             
             location = "characters/" + character.id + "/" + character.outfit + "/" + sprite + ".png"
             print("Compiling: " + sprite)
