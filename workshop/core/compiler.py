@@ -21,6 +21,8 @@ def check(actions: list[dict]):
             existing_label.append(action["label"])
         elif action["type"] == "transition":
             existing_jump.append(action["label"])
+        elif action["type"] == "unlock_dialogues":
+            existing_jump+=action["events"]
         elif action["type"] == "choice":
             # Collect jump labels inside choice
             for choice in action["choice"]:
@@ -35,7 +37,7 @@ def check(actions: list[dict]):
     # Check if any jump points to a non-existing label
     for jump in existing_jump:
         if jump not in existing_label:
-            raise ValueError(f"A jumpTo or a 'choice' statement is pointing to a non-existent label called: {jump}. You can bypass this error and watch as your game crashes to a Null Pointer Exception when running this script. Or you can do a Ctrl+F and look for {jump} and make sure that it goes somewhere.")
+            raise ValueError(f"A jumpTo or a 'choice' or an 'unlock event' statement is pointing to a non-existent label called: {jump}. You can bypass this error and watch as your game crashes to a Null Pointer Exception when running this script. Or you can do a Ctrl+F and look for {jump} and make sure that it goes somewhere.")
     
     # Check for duplicate IDs and provide detailed error messages
     for action_id, actions_with_id in existing_id.items():

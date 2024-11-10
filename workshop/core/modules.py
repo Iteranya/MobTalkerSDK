@@ -343,13 +343,14 @@ class VisualNovelModule(): # Module Class, just add more function as you like
         return result
     
     def unlock_dialogue(self,events:list):
-        result = {
-            "type":"unlock_dialogues",
-            "action":"unlock_dialogues",
-            "events":events
-        }
-        self.dialogueDict.append(result)
-        return result
+        if(events[0]!=""):
+            result = {
+                "type":"unlock_dialogues",
+                "action":"unlock_dialogues",
+                "events":events
+            }
+            self.dialogueDict.append(result)
+            return result
     
     def condNight(self,actions):
         print("Compiling: Night Condition")
