@@ -114,7 +114,48 @@ def story():
     vn.say(c,"And... even though your home, I mean, the Overworld looks way prettier than my realm...")
     vn.say(c,"Ahhh... What am I thinking, of course I want to go back.")
     vn.jumpTo("incoming_call")
+    
+    vn.label("end")
+    vn.finish()
 
+    vn.label("about_cats")
+    vn.show(c,"normal")
+    vn.say(c,"I saw a cat...")
+    vn.show(c,"happy")
+    vn.say(c,"We should adopt one!")
+    vn.show(c,"normal")
+    vn.say(c,"Why are you looking at me like that???")
+    vn.choice({
+        "hate_cat":"Don't you hate cats?",
+        "afraid_cat":"Aren't you afraid of cats?"
+    })
+
+    vn.label("hate_cat")
+    vn.show(c,"angry")
+    vn.say(c,"If I hate cats, every creeper you meet would be dead set on blowing off cats from the face of this land.")
+    vn.show(c,"happy")
+    vn.say(c,"But I love them! That's why I made sure all creepers do their best not to hurt cats!")
+    vn.jumpTo("boss_mob_control")
+
+    vn.label("afraid_cat")
+    vn.show(c,"sad")
+    vn.say(c,"Afraid of them? They're just cats! They're like... the least hostile thing out there! It's not like they actively hunt creepers like dogs hunt skeletons, no?")
+    vn.show(c,"happy")
+    vn.say(c,"Besides, they're adorable! I even made sure that all creepers  avoid cats as to not hurt them!")
+    vn.jumpTo("boss_mob_control")
+
+    vn.label("boss_mob_control")
+    vn.show(c,"normal")
+    vn.say(c,"Hmm...")
+    vn.say(c,"That look on your face, you want me to blacklist you too, right? Tell all creepers not to blow up in your face?")
+    vn.show(c,"happy")
+    vn.say(c,"Ahaha! Maybe if I like you enough, I will~")
+    vn.jumpTo("incoming_call")
+    vn.finish()
+
+
+
+    # DEVELOPER COMMENTARY
     vn.label("incoming_call")
     vn.say(n,"There's an incoming call from an unknown number...")
     vn.say(n,"Pick Up?")
@@ -122,10 +163,6 @@ def story():
         "tutorial":"Sure",
         "end":"No Thanks"
     })
-    
-    vn.label("end")
-    vn.finish()
-
     vn.label("tutorial")
     vn.show(a,"normal")
     vn.say(a,"Excuse Me")

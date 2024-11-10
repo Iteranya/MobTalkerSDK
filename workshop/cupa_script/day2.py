@@ -92,7 +92,7 @@ def story():
     vn.show(c,"normal")
     vn.say(c,"Nope! Nothing came to mind!")
     vn.say(c,"Guess I'll leave it to you to figure it out~")
-    vn.unlock_dialogue([""])
+    vn.unlock_dialogue(["about_cats"])
     vn.next("day2idle")
     vn.finish()
 

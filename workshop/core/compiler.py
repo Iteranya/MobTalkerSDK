@@ -37,13 +37,13 @@ def check(actions: list[dict]):
     # Check if any jump points to a non-existing label
     for jump in existing_jump:
         if jump not in existing_label:
-            raise ValueError(f"A jumpTo or a 'choice' or an 'unlock event' statement is pointing to a non-existent label called: {jump}. You can bypass this error and watch as your game crashes to a Null Pointer Exception when running this script. Or you can do a Ctrl+F and look for {jump} and make sure that it goes somewhere.")
+            raise ValueError(f"Label not found: {jump}\n\nA jumpTo or a 'choice' or an 'unlock event' statement is pointing to a non-existent label called: {jump}. You can bypass this error and watch as your game crashes to a Null Pointer Exception when running this script. Or you can do a Ctrl+F and look for {jump} and make sure that it goes somewhere.")
     
     # Check for duplicate IDs and provide detailed error messages
     for action_id, actions_with_id in existing_id.items():
         if len(actions_with_id) > 1:
             action_details = "\n".join(str(action) for action in actions_with_id)
-            raise ValueError(f"Duplicate action found:\n{action_details}\nThis usually happens because you forgot to add 'True' inside nested conditionals. Yeah, I know, weird, but you have specifically tell this thing when you make a nested statement of any kind... Sorry for  the weird workaround, I'm still working on a more graceful way of handling nested conditionals. Just mark nested as 'True' aight?")
+            raise ValueError(f"Duplicate action found:\n{action_details}\n\nThis usually happens because you forgot to add 'True' inside nested conditionals. Yeah, I know, weird, but you have specifically tell this thing when you make a nested statement of any kind... Sorry for  the weird workaround, I'm still working on a more graceful way of handling nested conditionals. Just mark nested as 'True' aight?")
 
 
 
