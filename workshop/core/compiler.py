@@ -27,7 +27,7 @@ def check(actions: list[dict]):
     # Check if any jump points to a non-existing label
     for jump in existing_jump:
         if jump not in existing_label:
-            raise ValueError(f"Jump points to a non-existing label: {jump}")
+            raise ValueError(f"A jumpTo or a 'choice' statement is pointing to a non existent label called: {jump}. You can bypass this error and watch as your game crashes to a Null Pointer Exception when running this script. Or you can do a ctr+f and look for {jump} and make sure that it goes somewhere.")
 
 
 
