@@ -115,7 +115,7 @@ def story():
     vn.choice({
         "you_creeper": "You're a creeper?",
         "you_cactus":"You're a cactus?",
-        "you_cosplay":"You're a cosplayer?"
+        
     })
     
     vn.label("you_creeper")
