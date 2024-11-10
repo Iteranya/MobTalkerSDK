@@ -102,7 +102,7 @@ def story():
     vn.label("gunpowder")
     vn.show(c,"tired")
     vn.say(c,"Ugh... I knew it...")
-    vn.finish
+    vn.finish()
 
     vn.label("about_you")
     vn.show(c,"sad")

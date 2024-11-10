@@ -5,6 +5,8 @@
 # Feel free to customize it to your system~
 from core.model import Character
 
+scriptDict = []
+
 class VisualNovelModule(): # Module Class, just add more function as you like
     def __init__(self):
         self.dialogueDict = []
