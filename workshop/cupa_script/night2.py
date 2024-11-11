@@ -32,33 +32,42 @@ def story():
     vn.next("creeper_gatekey")
     vn.finish()
 
-    vn.label("creeper_gatekey")
-    vn.say(c,"So, how was it?")
-    vn.say(n,"Unfortunately for you and Cupa, the item requires materials with no known crafting recipe.")
-    vn.jumpTo("jei_not_installed")
-
     vn.label("jei_not_installed")
     vn.show(c,"sad")
     vn.say(c,"Hmmm... Guess that'll be too easy huh???")
-    vn.show(c,"tired")
-    vn.say(c,"I can't believe I'm saying this... But... Can you ask Andr for help?")
-    vn.show(c,"sad")
-    vn.say(c,"I'm not on good terms with her, but... I think you're the only one that can help me here...")
+    vn.show(c,"normal")
+    vn.say(c,"Eh, whatever, it's already broken anyway, here")
+    vn.givePlayer("mobtalkerredux:creeper_gate_broken_key_item",1)
+    vn.say(n,"The creeper handed you a strange item, it felt cold your hand.")
+    vn.show(c,"happy")
+    vn.say(c,"Do your magic, player!")
+    vn.next("creeper_gatekey")
+    vn.finish()
 
+    vn.label("creeper_gatekey")
+    vn.show(c,"normal")
+    vn.say(c,"So, how was it?")
+    vn.say(c,"Can you make a new one?")
+    vn.say(n,"Unfortunately for both you and Cupa, the items required to make a new Creeper Gate Key are not craftable materials.")
+    vn.show(c,"sad")
+    vn.say(c,"Hmm... That's too bad...")
+    vn.show(c,"normal")
+    vn.say(c,"But hey! No pressure~")
+    vn.say(c,"Thanks for all your help!")
     vn.next("night2idles")
     vn.finish()
 
     vn.label("night2idles")
     vn.show(c,"normal")
-    vn.say(c,"Good evening")
+    vn.say(c,"Hi Player!")
     
-    vn.condDay([
-        vn.say("Narrator","The sun has risen, ready to start your day?",True),
-        vn.choice({
-            "day3": "Yes",
-            "chat_idles": "No"
-        },True)
-    ])    
+    # vn.condDay([
+    #     vn.say("Narrator","The sun has risen, ready to start your day?",True),
+    #     vn.choice({
+    #         "day3": "Yes",
+    #         "chat_idles": "No"
+    #     },True)
+    # ])    
     vn.jumpTo("chat_idles")
     vn.finish()
     return vn.dialogueDict

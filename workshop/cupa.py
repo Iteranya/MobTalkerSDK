@@ -14,12 +14,12 @@ storyName = "cupa" # This will be the name of the Json File
 
 # Import your scripts (all the .py file inside the script folder)
 
-from cupa_script import day1,night1,day2,day3,day4,day5
+from cupa_script import day1,night1,day2,night2,day3,day4,day5
 scripts = [
     day1.story(),
     night1.story(),
     day2.story(),
-    # night2.story(),
+    night2.story(),
     # day3.story(),
     # night3.story(),
     # day4.story(),
