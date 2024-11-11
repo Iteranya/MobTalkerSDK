@@ -230,3 +230,69 @@ Even then, some event can be gatelocked behind Affection Point. And one of the b
 And if all the events have been exhausted, then, well, the "Idle" conversation will trigger from then on until Script maker updates the script.
 
 
+FUCKING DONE!!!
+
+- Mob Talker Item 
+- Name Tag System
+- The Dialogue And All That Jazz
+- Compile-time Error tracking
+
+Now... What to have next:
+
+- Custom GUI
+- Custom Advancement
+- Custom AI 
+
+- Custom GUI
+ - Heckin' hard 
+ - May as well be a new framework
+ - AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+- Custom Advancement
+ - Might be Viable
+ - Can be the Quest System
+ - Works Nicely with Json (Already Is Json)
+
+- Custom AI
+ - LAUGHS HYSTERICALLY IN JAVA
+
+Got it, Custom Advancement it is...
+
+Now  how does it work?
+
+Minecraft has nice and cute Json file that tracks advancement. 
+
+So... I'm gonna need to figure out a way to turn all  this  into an advancement...
+
+Fuck, fuck, fuck, this isn't gonna be easy, is it????
+
+SHIT!!!!
+
+Okay, DSL for Scripting is done, that's like, 1000 times harder than creating an advancement scripting engine
+
+Okay, okay, phew... Calmth thy soul Iteranya, let's do this...
+
+*Takes Deep Breath*
+
+- Let's see what an advancement structure look like...
+
+(SCREAMS HYSTERICALLY IN JSON)
+
+Okay, so it's not as easy as I expected
+I mean, of course it's not
+
+(jesus fuck)
+
+Anyway... Uhhh...
+
+What NOW?!!?!?
+
+NGAAAAAAAA
+
+Swallow It And Let's Fucking Do This
+
+Ohh, thank fuck AI...
+
+Yeah, please, gods, please, gimme those  sweet structured Data Class
+
+FUCK YESSSS

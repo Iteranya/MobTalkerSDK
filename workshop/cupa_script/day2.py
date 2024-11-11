@@ -100,13 +100,13 @@ def story():
     vn.show(c,"normal")
     vn.say(c,"Hmm? Something on your mind?")
     
-    # vn.condNight([
-    #     vn.say("Narrator","The day have come to an end. Are you at home and ready to end the day?",True),
-    #     vn.choice({
-    #         "night2": "Yes",
-    #         "chat_idles": "No"
-    #     },True)
-    # ])    # Commented because not available yet
+    vn.condNight([
+        vn.say("Narrator","The day have come to an end. Are you at home and ready to end the day?",True),
+        vn.choice({
+            "night2": "Yes",
+            "chat_idles": "No"
+        },True)
+    ])    # Commented because not available yet
     vn.jumpTo("chat_idles")
     vn.finish()
     return vn.dialogueDict
