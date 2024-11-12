@@ -33,8 +33,8 @@ def story():
     vn.say(c,"Imagine the possibilities!")
     vn.remove("nametag_screenshot")
     vn.show(c,"normal")
-    vn.say(c,"But  yeah, that's what the mod's capable of~")
+    vn.say(c,"But yeah, that's what the mod's capable of~")
     vn.show_right(a,"Thanks for the explanation Cupa")
-    vn.say(c,"You're welcome, back to you developer")
+    vn.say(c,"You're welcome, back to you Andr")
     vn.finish()
     return vn.dialogueDict

@@ -8,17 +8,14 @@ from core.compiler import compile
 # This file is the 'core' file
 
 vn = VisualNovelModule() # Your Module~ Always need this~
-storyName = "ars" # This will be the name of the Json File
+storyName = "cupa" # This will be the name of the Json File
 
 
 # Import your scripts (all the .py file inside the script folder)
 
-from tutorial_script import s1_introduction_installation,s2_sdk_installation,s3_basic_usage,s4_resource_packing
+from tutorial_script import s1_5_cupa_showcase
 scripts = [
-    s1_introduction_installation.story(),
-    s2_sdk_installation.story(),
-    s3_basic_usage.story(),
-    s4_resource_packing.story()
+    s1_5_cupa_showcase.story()
 ]
 
 # Yes, it's that simple
