@@ -6,8 +6,3 @@
 
 Anyway, hi
 
-I'm writing an Eroge
-
-Nothing wholesome
-
-That  is all
