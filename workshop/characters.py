@@ -38,3 +38,12 @@ Andr = Character(
         traits = None,
 )
 
+Ars = Character(
+        id="ars", # The Id is for folder structure and such, make it unique pls, lower case
+        name = "Ars",
+        description = "The fuckin' Developer",
+        thoughts= "AAAAAAAAAAAAAAAAAAA",
+        outfit = "default",
+        states = None,
+        traits = None,
+)
