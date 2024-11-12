@@ -54,7 +54,7 @@ def story():
     
     vn.label("i_mine")
     vn.show(c,"normal")
-    vn.say(c,"Hmm, unearthing treasures deep in the depths I see?")
+    vn.say(c,"Hmm, unearthing treasures deep in the depths and beyond I see?")
     vn.say(c,"Interesting~")
     vn.jumpTo("cupa_request")
 
@@ -85,6 +85,7 @@ def story():
     })
 
     vn.label("memories")
+    vn.show(c,"normal")
     vn.say(c,"Last thing I remembered huh???")
     vn.say(c,"Hmm...")
     vn.show(c,"angry")

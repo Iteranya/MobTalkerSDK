@@ -26,7 +26,7 @@ Cupa = Character(
         outfit = "default", # This is the outfit folder
         states = None, # Unused for now
         traits = None
-    )
+        )
 
 Andr = Character(
         id="andr", # The Id is for folder structure and such, make it unique pls, lower case
