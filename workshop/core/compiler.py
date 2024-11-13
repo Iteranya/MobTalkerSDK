@@ -7,8 +7,39 @@ def compileVN(script):
     # Go ahead and turn on the following to check the list of dict, each one represents a state
     # print(script_actions)
     flat = flattenVN(script_actions)
+    flat = sanitize(flat)
     check(flat)
     return flat
+
+def sanitize(data_list):
+
+    # Common problematic characters and their replacements
+    replacements = {
+        '\u201c': '"',  # Left double quote
+        '\u201d': '"',  # Right double quote
+        '\u2018': "'",  # Left single quote
+        '\u2019': "'",  # Right single quote
+        '\u2013': '-',  # En dash
+        '\u2014': '-',  # Em dash
+        '\u2026': '...',  # Ellipsis
+        '\u00a0': ' ',  # Non-breaking space
+    }
+    
+    def sanitize_string(text):
+        if not isinstance(text, str):
+            return text
+        
+        # Replace known problematic characters
+        for old, new in replacements.items():
+            text = text.replace(old, new)
+            
+        # Convert to ASCII-only string, replacing any other unknown characters with ?
+        return text.encode('ascii', 'replace').decode('ascii')
+    
+    def sanitize_dict(d):
+        return {k: sanitize_string(v) if isinstance(v, str) else v for k, v in d.items()}
+    
+    return [sanitize_dict(d) for d in data_list]
 
 def check(actions: list[dict]):
     existing_label = []

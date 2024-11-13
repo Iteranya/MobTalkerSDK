@@ -4,7 +4,7 @@
 # Adding new class unfortunately still doesn't work, (Yet), I'm working on it
 # Feel free to customize it to your system~
 from core.model import Character
-
+import re
 class VisualNovelModule(): # Module Class, just add more function as you like
     def __init__(self):
         self.dialogueDict = []
@@ -86,8 +86,8 @@ class VisualNovelModule(): # Module Class, just add more function as you like
     def show(self, character, sprite, transition=False):
         if isinstance(character, Character):
             # Check if sprite contains any whitespace
-            if any(char in sprite for char in [' ', '.', ',', '!', '?', '#','@','$','*']):
-                raise ValueError("Sprite name cannot contain special characters or white space.")
+            if re.search(r"[A-Z\s.,!?#@$*]", sprite):
+                raise ValueError("Sprite name cannot contain special characters, white space, or uppercase letters.")
             
             location = "characters/" + character.id + "/" + character.outfit + "/" + sprite + ".png"
             print("Compiling: " + sprite)
@@ -113,8 +113,8 @@ class VisualNovelModule(): # Module Class, just add more function as you like
 
     def show_custom(self,character,sprite,wRatio,hRatio,wFrameRatio,hFrameRatio,colPos,rowPos,nested=False):
         if isinstance(character, Character): 
-            if ' ' in sprite:
-                raise ValueError("Sprite name cannot contain whitespace.")
+            if re.search(r"[A-Z\s.,!?#@$*]", sprite):
+                raise ValueError("Sprite name cannot contain special characters, white space, or uppercase letters.")
             location = "characters/"+character.id+"/"+character.outfit+"/"+sprite+".png"
             print("Compiling: "+sprite)
             result = {
@@ -157,6 +157,9 @@ class VisualNovelModule(): # Module Class, just add more function as you like
 
     def show_left(self,character,sprite,transition=False):
         if isinstance(character, Character): 
+            if re.search(r"[A-Z\s.,!?#@$*]", sprite):
+                raise ValueError("Sprite name cannot contain special characters, white space, or uppercase letters.")
+  
             location = "characters/"+character.id+"/"+character.outfit+"/"+sprite+".png"
             print("Compiling: "+sprite)
             result = {
@@ -180,6 +183,9 @@ class VisualNovelModule(): # Module Class, just add more function as you like
 
     def show_right(self,character,sprite,transition=False):
         if isinstance(character, Character): 
+            if re.search(r"[A-Z\s.,!?#@$*]", sprite):
+                raise ValueError("Sprite name cannot contain special characters, white space, or uppercase letters.")
+  
             location = "characters/"+character.id+"/"+character.outfit+"/"+sprite+".png"
             print("Compiling: "+sprite)
             result = {

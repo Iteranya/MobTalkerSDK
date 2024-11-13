@@ -8,7 +8,7 @@ from core.compiler import compile
 # This file is the 'core' file
 
 vn = VisualNovelModule() # Your Module~ Always need this~
-storyName = "ars" # This will be the name of the Json File
+storyName = "andr" # This will be the name of the Json File
 
 
 # Import your scripts (all the .py file inside the script folder)
