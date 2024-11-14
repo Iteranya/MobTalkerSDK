@@ -20,13 +20,6 @@ def story():
 
     # Come on now, it's intuitive enough~
     vn.setVar("background",False)
-
-    vn.differentDay([
-        "day1","day2","day3","day4"
-    ])
-    vn.sameDay([
-        "idle1","idle2","idle3","idle4"
-    ])
     vn.start()
     vn.label("start") # This is a 'Label', it will be used by the jump and choice to know where to go
     vn.show(c,"happy")
@@ -56,6 +49,8 @@ def story():
     vn.say(a, "Mmm, good to meet you player~")
     vn.say(a, "Let's go somewhere else more comfortable...")
     vn.background("end.png")
+    vn.say(a,"Ah wait, let me check if the music works as intended...")
+    vn.play_music("revenge.ogg")
     vn.modVar("background",True)
     vn.say(a, "Now what do you wish to know?")
     vn.label("demo_menu") 

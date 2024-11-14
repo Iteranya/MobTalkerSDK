@@ -82,7 +82,33 @@ class VisualNovelModule(): # Module Class, just add more function as you like
         }
         self.dialogueDict.append(result)
         return result
-
+    
+    def voice_effect(self, sound):
+        result = {
+            "type":"play_sound",
+            "action":"sound_effect",
+            "sound":sound
+        }
+        self.dialogueDict.append(result)
+        return result
+    
+    def play_music(self, music):
+        result = {
+            "type":"play_music",
+            "action":"play_music",
+            "music":music
+        }
+        self.dialogueDict.append(result)
+        return result
+    
+    def stop_music(self):
+        result = {
+            "type":"play_music",
+            "action":"stop_music",
+            "music":None
+        }
+        self.dialogueDict.append(result)
+        return result
     def show(self, character, sprite, transition=False):
         if isinstance(character, Character):
             # Check if sprite contains any whitespace
@@ -461,4 +487,37 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "amount":amount
         }
         self.dialogueDict.append(result)
+        return result
+    
+
+class SoundModule():
+
+    def __init__(self):
+        self.soundDict = []
+
+    def voice(self, name):
+        result= {
+            f"sound.{name}": {
+                "sounds": [
+                    {
+                        "name": f"mobtalkerredux:sound/{name}"
+                    }
+                ]
+            }
+        }
+        self.soundDict.append(result)
+        return result
+    
+    def music(self, name):
+        result= {
+            f"music.{name}": {
+                "sounds": [
+                    {
+                        "name": f"mobtalkerredux:music/{name}",
+                        "stream":True
+                    }
+                ]
+            }
+        }
+        self.soundDict.append(result)
         return result

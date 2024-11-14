@@ -117,3 +117,13 @@ def compile(storyname,script):
     print("Compiling VN script to FSM...")
     fsm =compileVN(script)
     save_to_json_file(fsm,storyname+".json")
+
+def sound_compile(sounds):
+    result = compile_sound(sounds)
+    save_to_json_file(result,"sounds.json")
+
+def compile_sound(sounds: list[dict]) -> dict:
+    combined_dict = {}
+    for sound_dict in sounds:
+        combined_dict.update(sound_dict)
+    return combined_dict

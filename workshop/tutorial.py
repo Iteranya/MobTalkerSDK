@@ -21,8 +21,9 @@ scripts = [
     s4_resource_packing.story()
 ]
 
-# Yes, it's that simple
-# No need to change anything below.
+# This is Only Required if your VN contains sound effect or voice or music etc
+# It's a bit weird, but Minecraft needs you to compile everything into sounds.json
+# Trust me, I would NOT put this in if Minecraft can load a sound file as easily as images.
 
 
 def compileMultiStory():
