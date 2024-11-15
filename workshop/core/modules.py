@@ -48,6 +48,31 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             self.dialogueDict.append(result)
         return result
     
+    def say(self, character, content, voice:str=None,transition=False):
+        name = ""
+        if isinstance(character, Character):
+            name = character.name
+        elif character == None:
+            name = ""
+        else:
+            name = character
+        print("Compiling: " + content)
+        contains_uppercase = any(char.isupper() for char in content)
+
+        # Check if content has no whitespace and is uppercase
+        if not contains_uppercase and not any(char in content for char in [' ', '.', ',', '!', '?', '#','@','$','*','`',':']):
+            raise ValueError("Look suspiciously like a 'show' statement because it contains no whitespace or a capital letter. If this is a mistake, use 'say_special' instead of say to bypass this check. But seriously, do double check it, okay??? You probably want to do a `show(c,\""+content+"\")` rather than `say(c,"+content+")`. This check will make your life easier, I swear, it's better if you caught on to this error in the SDK than in Minecraft. At least you don't have to wait to boot up minecraft to check all these errors. Ya hear??? But if  you really don't like it, then you can disable this check permanently by going to modules.py and disable the raise value  stuff in the say method. Don't say I didn't warn you.")
+        result = {
+            "type": "dialogue",
+            "action": "say",
+            "label": name,
+            "content": content,
+            "voice":voice
+        }
+        if not transition:
+            self.dialogueDict.append(result)
+        return result
+    
     def say_special(self, character, content, transition=False):
         name = ""
         if isinstance(character, Character):
@@ -521,3 +546,19 @@ class SoundModule():
         }
         self.soundDict.append(result)
         return result
+    
+    def generate_sound_dict(self,start, end,name,sound):
+        sound_dict = {}
+        for i in range(start, end + 1):
+            sound_key = f"sound.{name}-{i:02}"  # Formats the number as two digits
+            sound_dict[sound_key] = {
+                "sounds": [
+                    {
+                        "name": f"mobtalkerredux:sound/{name}-{i:02}",
+                        "stream": True,
+                        "volume": sound
+                    }
+                ]
+            }
+        self.soundDict.append(sound_dict)
+        return sound_dict

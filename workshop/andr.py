@@ -13,12 +13,9 @@ storyName = "cupa" # This will be the name of the Json File
 
 # Import your scripts (all the .py file inside the script folder)
 
-from script import script1,script2,script3
+from andr_script import script1
 scripts = [
-    script1.story(),
-    script2.story(),
-    script3.story()
-
+    script1.story()
 ]
 
 # Yes, it's that simple
