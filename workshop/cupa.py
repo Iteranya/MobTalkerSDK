@@ -13,9 +13,9 @@ storyName = "cupa" # This will be the name of the Json File
 
 # Import your scripts (all the .py file inside the script folder)
 
-from tutorial_script import s1_5_cupa_showcase
+from cupa_script import script1
 scripts = [
-    s1_5_cupa_showcase.story()
+    script1.story()
 ]
 
 # Yes, it's that simple

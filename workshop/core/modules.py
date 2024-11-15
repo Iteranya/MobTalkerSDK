@@ -24,7 +24,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
         self.dialogueDict.append(result)
         return result
 
-    def say(self, character, content, transition=False):
+    def say(self, character, content, nested=False):
         name = ""
         if isinstance(character, Character):
             name = character.name
@@ -44,11 +44,11 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "label": name,
             "content": content
         }
-        if not transition:
+        if not nested:
             self.dialogueDict.append(result)
         return result
     
-    def say(self, character, content, voice:str=None,transition=False):
+    def say(self, character, content, voice:str=None,nested=False):
         name = ""
         if isinstance(character, Character):
             name = character.name
@@ -69,7 +69,7 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             "content": content,
             "voice":voice
         }
-        if not transition:
+        if not nested:
             self.dialogueDict.append(result)
         return result
     
