@@ -205,6 +205,49 @@ class VisualNovelModule(): # Module Class, just add more function as you like
             return result
         else:
             pass
+    def show_background(self,character,sprite,nested=False):
+        if isinstance(character, Character): 
+            if re.search(r"[A-Z\s.,!?#@$*]", sprite):
+                raise ValueError("Sprite name cannot contain special characters, white space, or uppercase letters.")
+            location = "characters/"+character.id+"/"+character.outfit+"/"+sprite+".png"
+            print("Compiling: "+sprite)
+            result = {
+                "type":"modify_background",
+                "action":"show",
+                "sprite":character.id,
+                "location":location,
+                "position":"CUSTOM",
+                "wRatio": 16,
+                "hRatio": 9,
+                "wFrameRatio":16,
+                "hFrameRatio":9,
+                "column":1,
+                "row":1
+            }
+            if(nested==False):
+                self.dialogueDict.append(result)
+            return result
+        elif isinstance(character,str):
+            location = character+"/"+sprite+".png"
+            print("Compiling: "+sprite)
+            result = {
+                "type":"show_sprite",
+                "action":"show",
+                "sprite":sprite,
+                "location":location,
+                "position":"CUSTOM",
+                "wRatio": 16,
+                "hRatio": 9,
+                "wFrameRatio":16,
+                "hFrameRatio":9,
+                "column":1,
+                "row":1
+            }
+            if(nested==False):
+                self.dialogueDict.append(result)
+            return result
+        else:
+            pass
 
     def show_left(self,character,sprite,transition=False):
         if isinstance(character, Character): 

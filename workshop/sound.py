@@ -4,10 +4,14 @@ from core.compiler import sound_compile
 s = SoundModule()
 
 def sounds():
-    s.music("revenge")
-    s.generate_sound_dict(1,53,"a",0.8)
-    s.generate_sound_dict(1,34,"c",0.8)
-
+    s.generate_sound_dict(1,108,"a",1.0)
+    s.generate_sound_dict(1,45,"c",1.0)
+    s.generate_sound_dict(1,94,"p",0.8)
+    s.music("rain_ambience")
+    s.music("haggstrom")
+    s.music("mice")
+    s.voice("footstep")
+    s.voice("teleport")
     return s.soundDict
 
 
