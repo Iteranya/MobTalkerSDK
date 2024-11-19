@@ -7,9 +7,9 @@
 
 # Have fun then!
 
-RESOURCE_PACK_NAME = "Example Resource Pack"
-RESOURCE_PACK_DESCRIPTION = "Example Description of the Example Resource Pack"
-TRIGGER_WORDS = "List, of, name, if, your, resource, pack, contains, multiple, characters"
+RESOURCE_PACK_NAME = "episode_one"
+RESOURCE_PACK_DESCRIPTION = "1. The Basics of Script Writing"
+TRIGGER_WORDS = "Andr"
 
 # =======================================
 

@@ -116,7 +116,7 @@ def save_to_json_file(data: list[dict], file_path: str):
 def compile(storyname,script):
     print("Compiling VN script to FSM...")
     fsm =compileVN(script)
-    save_to_json_file(fsm,storyname+".json")
+    save_to_json_file(fsm,"mediafile/scripts/"+storyname+".json")
 
 def sound_compile(sounds):
     result = compile_sound(sounds)

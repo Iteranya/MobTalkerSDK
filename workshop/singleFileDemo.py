@@ -13,7 +13,7 @@ vn = VisualNovelModule()
 c = Cupa 
 a = Andr
 p = "Player" 
-storyName = "demo" # This will be the name of the Json File
+storyName = "demo" # This will be the name of the Json File and the Trigger Word
 
 def story():
 
