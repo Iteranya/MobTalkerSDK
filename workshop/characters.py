@@ -5,8 +5,5 @@ Monika = Character(
         name = "Monika",
         description = "Just Monika",
         thoughts= "Unknown",
-        outfit = "<monika_outfit>",
-        states = None,
-        traits = None,
 )
 

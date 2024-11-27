@@ -1,10 +1,12 @@
 from core.modules import VisualNovelModule
+from core.model import Status
 # This is the Example Script, obviously~
 
 from characters import Monika # Import characters you've defined in characters.py
 vn = VisualNovelModule()
 m = Monika 
 p = "Player" 
+s = Status()
 
 def story():
     vn.start()
@@ -44,7 +46,7 @@ def story():
         "in_safe_place":"Yes, we're in a safe place",
         "not_in_safe_place":"Nope, we're not in a safe place"
     })
-    vn.label("in_safe_place")
+    vn.label("not_safe_place")
     vn.say(m,"Ahhh... we should go and get to safety then...")
     vn.say(m,"Come on Player! I'll follow you~ If possible, I mean, you attached my script to a friendly mob right?")
     vn.show(m,"hd_l")
@@ -54,6 +56,7 @@ def story():
     vn.label("main")
     vn.label("situation_eval")
     vn.label("day_eval")
+    vn.setVar("gamemode",s.GAMEMODE)
     vn.label("holiday_eval")
 
     return vn.dialogueDict
