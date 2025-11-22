@@ -638,20 +638,6 @@ class VisualNovelModule(): # Module Class, just add more function as you like
         self.dialogueDict.append(result)
         return result
 
-
-
-
-    
-    def getGamemode(self,nested = True):
-        result = {
-            "type":"command",
-            "action":"get_gamemode"
-        }
-        if(nested==False):
-            self.dialogueDict.append(result)
-        
-        return result
-
     def customCommand(self,minecraftCommmand:str):
         result = {
             "type":"command",
@@ -660,17 +646,6 @@ class VisualNovelModule(): # Module Class, just add more function as you like
         }
         self.dialogueDict.append(result)
         return result
-    
-    def givePlayer(self,itemId:str,amount:int):
-        result = {
-            "type":"give_player",
-            "action":"give_player",
-            "item_id":itemId,
-            "amount":amount
-        }
-        self.dialogueDict.append(result)
-        return result
-    
 
 class SoundModule():
 
